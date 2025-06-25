@@ -25,7 +25,7 @@ class MlxTrainer:
             "--steps-per-eval", "50",
             "--save-every", str(TRAINING_ARGS["save_steps"]),
             "--adapter-path", output_dir,
-            "--mask-prompt"  # Critical flag for chat format training
+            "--mask-prompt"  # Only train on Jesse's responses, not prompts
         ]
         
         subprocess.run(cmd, check=True)

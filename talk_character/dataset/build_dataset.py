@@ -29,14 +29,13 @@ def create_conversation_pairs(df: pd.DataFrame) -> List[Dict[str, Any]]:
     """Creates conversation pairs from the Breaking Bad transcript dataset.
     
     This function processes the dataframe to create conversation pairs where a non-Jesse character
-    speaks followed by Jesse's response. Each conversation includes a system prompt defining
-    Jesse's character.
+    speaks followed by Jesse's response. Uses chat format with system prompt defining Jesse's character.
     
     Args:
         df: The Breaking Bad transcript dataframe containing dialogue and speaker information.
     
     Returns:
-        A list containing conversation pairs in the format:
+        A list containing conversation pairs in chat format:
             {
                 "messages": [
                     {"role": "system", "content": SYSTEM_PROMPT},
