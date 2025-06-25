@@ -1,0 +1,18 @@
+# Apple Silicon optimized ML framework
+mlx-lm>=0.1.0          # MLX Language Models for fine-tuning
+transformers>=4.41.0   # Transformers library
+datasets               # Dataset processing
+huggingface_hub        # Hugging Face model hub
+peft                  # Parameter-Efficient Fine-Tuning
+
+# Core data processing
+pandas>=2.0.0         # Data manipulation
+tqdm>=4.65.0          # Progress bars
+
+# CLI and UI
+click                 # Command-line interfaces
+rich                  # Pretty logging and UI
+python-dotenv         # Environment variable loading
+
+# Optional
+numpy                 # Numerical computing
