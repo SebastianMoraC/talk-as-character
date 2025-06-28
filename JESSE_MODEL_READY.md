@@ -11,7 +11,7 @@ python -m mlx_lm generate \
 ## Chat with Jesse:
 ```bash
 python -m mlx_lm chat \
-    --model /Users/sebastian/meetups/talk-as-character/walter_fused_model
+    --model /Users/sebastian/meetups/talk-as-character/walter_fused_model 
 ```
 
 Your fused Jesse Pinkman model: /Users/sebastian/meetups/talk-as-character/walter_fused_model

@@ -29,6 +29,12 @@ def build_dataset_cmd():
 	from .dataset.build_dataset import build_dataset
 	build_dataset()
 
+@cli.command(name="build-dataset-2")
+def build_dataset_2_cmd():
+	"""Build Rick and Morty conversation dataset from Hugging Face."""
+	from .dataset.build_dataset_2 import build_dataset_2
+	build_dataset_2()
+
 @cli.command(name="finetune")
 def finetune_cmd():
     """Fine-tune Jesse Pinkman character model with MLX."""
