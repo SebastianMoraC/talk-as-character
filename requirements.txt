@@ -16,3 +16,7 @@ python-dotenv         # Environment variable loading
 
 # Optional
 numpy                 # Numerical computing
+
+# Telegram Bot
+pytelegrambotapi==4.14.0  # Telegram Bot API
+requests==2.31.0          # HTTP requests
