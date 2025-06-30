@@ -1,8 +1,11 @@
 import telebot
 import requests
+import sys
+import os
 from typing import Dict, List
 from dotenv import load_dotenv
-import os
+
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from talk_character.constants import SYSTEM_PROMPT_RICK
 
 load_dotenv()
