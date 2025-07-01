@@ -17,7 +17,6 @@ def export() -> None:
     output_dir = f"{TRAINING_ARGS['output_dir']}/walter_run"
     fused_dir = "walter_fused_model"
     
-    # Fuse LoRA adapters with base model
     subprocess.run([
         sys.executable, "-m", "mlx_lm", "fuse",
         "--model", MODEL_CONFIG["model_name"],
@@ -25,7 +24,6 @@ def export() -> None:
         "--save-path", fused_dir
     ], check=True)
     
-    # Create usage instructions
     instructions = f"""# Jesse Pinkman Model Ready!
 
 ## Test your fused model:

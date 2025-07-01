@@ -1,4 +1,3 @@
-"""Main CLI interface for talk-character package."""
 
 import click
 import shutil
@@ -10,7 +9,6 @@ from .constants import MODEL_CONFIG, TRAINING_ARGS
 @click.group()
 @click.version_option()
 def cli():
-	"""talk-character: Character-based LLM fine-tuning with MLX."""
 	pass
 
 @cli.command(name="clean")

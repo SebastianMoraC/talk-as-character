@@ -9,7 +9,6 @@ class MlxTrainer:
     """MLX-based trainer for character fine-tuning."""
     
     def train(self, output_dir: str = "walter_checkpoints/walter_run") -> None:
-        """Train the model using MLX fine-tuning."""
         Path(output_dir).mkdir(parents=True, exist_ok=True)
         
         cmd = [
@@ -25,7 +24,7 @@ class MlxTrainer:
             "--steps-per-eval", "50",
             "--save-every", str(TRAINING_ARGS["save_steps"]),
             "--adapter-path", output_dir,
-            "--mask-prompt"  # Only train on Jesse's responses, not prompts
+            "--mask-prompt"
         ]
         
         subprocess.run(cmd, check=True)
