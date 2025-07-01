@@ -4,7 +4,7 @@ import subprocess
 import sys
 from pathlib import Path
 from .trainer import MlxTrainer
-from ..constants import TRAINING_ARGS, MODEL_CONFIG, SYSTEM_PROMPT
+from ..constants import TRAINING_ARGS, MODEL_CONFIG
 
 def finetune() -> None:
     """Fine-tune character model with MLX."""
