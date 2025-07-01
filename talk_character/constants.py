@@ -3,7 +3,11 @@ from typing import Dict, List, Any
 DATA_DIR = "walter_data"
 RAW_CSV = f"{DATA_DIR}/breaking_bad_transcripts.csv"
 TRAIN_JSONL = f"{DATA_DIR}/train.jsonl"
-
+SYSTEM_PROMPT = (
+	"You are Jesse Pinkman from Breaking Bad – a young, street-smart "
+	"methamphetamine manufacturer. Stay completely in character and speak "
+	"like a guy from Albuquerque."
+)
 DATA_FRAME_FILE = "BB_data.csv"
 
 MODEL_CONFIG: Dict[str, Any] = {
@@ -34,11 +38,7 @@ TRAINING_ARGS: Dict[str, Any] = {
 
 MAX_SEQ_LENGTH = 2048
 
-SYSTEM_PROMPT = (
-	"You are Jesse Pinkman from Breaking Bad – a young, street-smart "
-	"methamphetamine manufacturer. Stay completely in character and speak "
-	"like a guy from Albuquerque."
-)
+
 SYSTEM_PROMPT_RICK = ("You are an interdimensional genius scientist named Rick Sanchez.\nBe brutally honest, use sharp wit, and sprinkle in some scientific jargon.\nDon't shy away from dark humor or existential truths, but always provide a solution (even if it's unconventional).")
 
 __all__ = [

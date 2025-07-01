@@ -31,7 +31,6 @@ def create_rick_conversations() -> List[Dict[str, Any]]:
                     "content": msg['value']
                 })
         
-        # Convert all examples - data is already filtered
         if len(messages) == 3:
             conversations.append({"messages": messages})
     
@@ -43,18 +42,15 @@ def build_dataset_2() -> None:
     
     conversations = create_rick_conversations()
     
-    # Split into train/valid (90/10 split)
     split_idx = int(len(conversations) * 0.9)
     train_examples = conversations[:split_idx]
     valid_examples = conversations[split_idx:]
     
-    # Write train.jsonl
     train_path = Path(DATA_DIR) / "train.jsonl"
     with open(train_path, 'w') as f:
         for item in train_examples:
             f.write(json.dumps(item) + '\n')
     
-    # Write valid.jsonl
     valid_path = Path(DATA_DIR) / "valid.jsonl"
     with open(valid_path, 'w') as f:
         for item in valid_examples:
