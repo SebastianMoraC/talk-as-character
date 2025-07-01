@@ -26,7 +26,7 @@ def clean_cmd():
 
 @cli.command(name="build-dataset")
 def build_dataset_cmd():
-	"""Build Jesse Pinkman conversation dataset from Breaking Bad transcripts."""
+	"""Build character conversation dataset from Breaking Bad transcripts."""
 	from .dataset.build_dataset import build_dataset
 	build_dataset()
 
@@ -38,7 +38,7 @@ def build_dataset_2_cmd():
 
 @cli.command(name="finetune")
 def finetune_cmd():
-	"""Fine-tune Jesse Pinkman character model with MLX."""
+	"""Fine-tune character model with MLX."""
 	from .llm.finetune import finetune
 	finetune()
 
@@ -50,11 +50,11 @@ def export_cmd():
 
 @cli.command(name="serve")
 def serve_cmd():
-	"""Start HTTP server to chat with Jesse Pinkman model."""
+	"""Start HTTP server to chat with character model."""
 	adapter_path = Path(f"{TRAINING_ARGS['output_dir']}/walter_run")
 	
 	if adapter_path.exists():
-		print(f"🔥 Starting server with base model + Jesse adapters...")
+		print(f"🔥 Starting server with base model + character adapters...")
 		subprocess.run([
 			sys.executable, "-m", "mlx_lm", "server", 
 			"--model", MODEL_CONFIG["model_name"],

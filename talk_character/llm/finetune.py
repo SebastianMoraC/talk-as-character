@@ -7,13 +7,13 @@ from .trainer import MlxTrainer
 from ..constants import TRAINING_ARGS, MODEL_CONFIG, SYSTEM_PROMPT
 
 def finetune() -> None:
-    """Fine-tune Jesse Pinkman character model with MLX."""
+    """Fine-tune character model with MLX."""
     output_dir = f"{TRAINING_ARGS['output_dir']}/walter_run"
     trainer = MlxTrainer()
     trainer.train(output_dir=output_dir)
 
 def export() -> None:
-    """Export fused Jesse Pinkman model."""
+    """Export fused character model."""
     output_dir = f"{TRAINING_ARGS['output_dir']}/walter_run"
     fused_dir = "walter_fused_model"
     
@@ -24,7 +24,7 @@ def export() -> None:
         "--save-path", fused_dir
     ], check=True)
     
-    instructions = f"""# Jesse Pinkman Model Ready!
+    instructions = f"""# Character Model Ready!
 
 ## Test your fused model:
 ```bash
@@ -34,13 +34,13 @@ python -m mlx_lm generate \\
     --max-tokens 100
 ```
 
-## Chat with Jesse:
+## Chat with character:
 ```bash
 python -m mlx_lm chat \\
     --model {Path(fused_dir).absolute()}
 ```
 
-Your fused Jesse Pinkman model: {Path(fused_dir).absolute()}
+Your fused character model: {Path(fused_dir).absolute()}
 """
         
     with open("JESSE_MODEL_READY.md", "w") as f:
